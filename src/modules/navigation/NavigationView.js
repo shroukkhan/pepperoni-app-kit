@@ -12,6 +12,9 @@ const {
 } = NavigationExperimental;
 import AppRouter from '../AppRouter';
 import TabBar from '../../components/TabBar';
+import DrawerLayoutExample from '../drawer/DrawerView'
+
+
 
 // Height duplicated from React Native NavigationHeader component
 const APP_BAR_HEIGHT = Platform.OS === 'ios' ? 64 : 56;
@@ -62,6 +65,7 @@ const NavigationView = React.createClass({
     const scenes = this.props.navigationState[tabKey];
     return (
       <View style={styles.container}>
+        <DrawerLayoutExample/>
         <NavigationCardStack
           key={'stack_' + tabKey}
           onNavigateBack={this.props.onNavigateBack}
