@@ -37,7 +37,7 @@ const TabBar = React.createClass({
 const styles = StyleSheet.create({
   navigationBar: {
     position: 'absolute',
-    bottom: 0,
+    top: 0,
     left: 0,
     right: 0,
     backgroundColor: '#eee',

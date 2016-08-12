@@ -8,6 +8,8 @@ import * as NavigationStateActions from './src/modules/navigation/NavigationStat
 
 const PepperoniAppTemplate = React.createClass({
 
+
+  //<editor-fold desc="Android Back Button Implementation">
   componentWillMount() {
     BackAndroid.addEventListener('hardwareBackPress', this.navigateBack);
   },
@@ -34,6 +36,9 @@ const PepperoniAppTemplate = React.createClass({
     store.dispatch(NavigationStateActions.popRoute());
     return true;
   },
+  //</editor-fold>
+
+
 
   render() {
     return (

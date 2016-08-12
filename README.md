@@ -1,3 +1,5 @@
+adb shell input keyevent 82
+
 ![Pepperoni - Empowered by Futurice](/docs/pepperoni.png?v=2)
 Futurice React Native Starter Kit
 ===
