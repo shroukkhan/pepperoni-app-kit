@@ -17,6 +17,7 @@ const {
 } = NavigationExperimental;
 import AppRouter from '../AppRouter';
 import DrawerLayout from 'react-native-drawer-layout';
+import SidebarView from '../sidebar/SidebarView'
 
 
 // Height duplicated from React Native NavigationHeader component
@@ -88,10 +89,7 @@ const NavigationView = React.createClass({
 
         const navigationView = (
             <View style={[styles.container, {backgroundColor: '#fff'}]}>
-
-                <TouchableHighlight onPress={() => this.drawer.closeDrawer()}>
-                    <Text>Close drawer</Text>
-                </TouchableHighlight>
+                <SidebarView/>
             </View>
         );
 
@@ -156,12 +154,13 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
     },
     toggleSidebar: {
-        height: APP_BAR_HEIGHT,
-        width: 25,
+        marginTop: 15,
+        height: 20,
+        width: 20,
         marginLeft: 10
     },
-    centered:{
-        textAlign:'center'
+    centered: {
+        textAlign: 'center'
     }
 
 });
