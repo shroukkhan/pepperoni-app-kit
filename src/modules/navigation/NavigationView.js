@@ -24,36 +24,6 @@ const APP_BAR_HEIGHT = Platform.OS === 'ios' ? 64 : 56;
 // Customize bottom tab bar height here if desired
 const TAB_BAR_HEIGHT = 50;
 
-var DrawerLockModeSwitches = React.createClass({
-
-    render: function () {
-        const {
-            value,
-            onValueChange,
-        } = this.props;
-
-        return (
-            <View>
-                <View style={[styles.container, styles.split]}>
-                    <Switch onValueChange={value => value ? onValueChange('unlocked') : onValueChange('unlocked')}
-                            value={value === 'unlocked'}/>
-                    <Text style={styles.spacedLeft}>Unlocked</Text>
-                </View>
-                <View style={[styles.container, styles.split]}>
-                    <Switch onValueChange={value => value ? onValueChange('locked-closed') : onValueChange('unlocked')}
-                            value={value === 'locked-closed'}/>
-                    <Text style={styles.spacedLeft}>locked-closed</Text>
-                </View>
-                <View style={[styles.container, styles.split]}>
-                    <Switch onValueChange={value => value ? onValueChange('locked-open') : onValueChange('unlocked')}
-                            value={value === 'locked-open'}/>
-                    <Text style={styles.spacedLeft}>locked-open</Text>
-                </View>
-            </View>
-        );
-    }
-});
-
 const NavigationView = React.createClass({
     propTypes: {
         onNavigateBack: PropTypes.func.isRequired,
@@ -118,9 +88,7 @@ const NavigationView = React.createClass({
 
         const navigationView = (
             <View style={[styles.container, {backgroundColor: '#fff'}]}>
-                <Text>Hello there!</Text>
-                <DrawerLockModeSwitches value={drawerLockMode}
-                                        onValueChange={value => this.setState({drawerLockMode: value})}/>
+
                 <TouchableHighlight onPress={() => this.drawer.closeDrawer()}>
                     <Text>Close drawer</Text>
                 </TouchableHighlight>
