@@ -77,16 +77,16 @@ const NavigationView = React.createClass({
                 onNavigateBack={this.props.onNavigateBack}
                 renderTitleComponent={() => {
                     return (
-                        <NavigationHeader.Title>
+                        <NavigationHeader.Title textStyle={styles.centered}>
                             {sceneProps.scene.route.title}
                         </NavigationHeader.Title>
                     );
                 }}
-                renderRightComponent={() => {
+                renderLeftComponent={() => {
                     return ( <TouchableHighlight onPress={()=>this.drawer.openDrawer()}>
-                        <Image resizeMode='contain'
-                               height="15" width="15"
-                               source={require('../../../images/menu-alt-512.png')}/>
+                        <Image style={styles.toggleSidebar}
+                               source={require('../../../images/menu-alt-512.png')}
+                        />
                     </TouchableHighlight>)
                 }}
             />
@@ -177,12 +177,25 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2F2F2',
         height: 40,
     },
+    stretch: {
+        width: 50,
+        height: 200
+    },
     split: {
         flexDirection: 'row',
     },
     spacedLeft: {
         paddingLeft: 10,
+    },
+    toggleSidebar: {
+        height: APP_BAR_HEIGHT,
+        width: 25,
+        marginLeft: 10
+    },
+    centered:{
+        textAlign:'center'
     }
+
 });
 
 export default NavigationView;
