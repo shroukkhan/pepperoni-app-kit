@@ -17,7 +17,7 @@ const {
 } = NavigationExperimental;
 import AppRouter from '../AppRouter';
 import DrawerLayout from 'react-native-drawer-layout';
-import SidebarView from '../sidebar/SidebarView'
+import SidebarView from '../../components/Sidebar'
 
 
 // Height duplicated from React Native NavigationHeader component
@@ -54,11 +54,14 @@ const NavigationView = React.createClass({
                     );
                 }}
                 renderLeftComponent={() => {
-                    return ( <TouchableHighlight onPress={()=>this.drawer.openDrawer()}>
-                        <Image style={styles.toggleSidebar}
-                               source={require('../../../images/menu-alt-512.png')}
-                        />
-                    </TouchableHighlight>)
+                    return (
+                        <TouchableHighlight
+                            onPress={()=>this.drawer.openDrawer()}
+                            underlayColor="#ffffff" >
+                            <Image style={styles.toggleSidebar}
+                                   source={require('../../../images/menu-alt-512.png')}
+                            />
+                        </TouchableHighlight>)
                 }}
             />
         );

@@ -1,5 +1,5 @@
 /**
- * Created by KHAN on 8/14/2016.
+ * Created by KHAN on 8/26/2016.
  */
 import React from 'react';
 import {
@@ -9,8 +9,6 @@ import {
 } from 'react-native';
 
 const SidebarView = React.createClass({
-
-
     render() {
         return (
             <View>
