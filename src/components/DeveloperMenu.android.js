@@ -1,7 +1,6 @@
 import React from 'react';
 import * as snapshot from '../utils/snapshot';
-import * as auth0 from '../services/auth0';
-
+import * as loginView from '../modules/login/LoginView'
 import {
   View,
   Text,
@@ -30,9 +29,9 @@ const DeveloperMenu = React.createClass({
     this.closeMenu();
   },
 
-  async showLogin() {
-    await auth0.showLogin();
-    console.log('Show auth0 login screen');
+  showLogin() {
+    loginView.showLogin();
+    console.log('Show login screen');
     this.closeMenu();
   },
 
@@ -88,7 +87,7 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: '#fff'
+    backgroundColor: '#000'
   },
   menu: {
     backgroundColor: 'white',

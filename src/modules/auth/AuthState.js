@@ -1,5 +1,5 @@
 import {Map, fromJS} from 'immutable';
-
+debugger;
 // Initial state
 const initialState = Map({
   isLoggedIn: false,
@@ -31,6 +31,7 @@ export function onUserLoginError(error) {
 
 // Reducer
 export default function AuthStateReducer(state = initialState, action = {}) {
+  //debugger;
   switch (action.type) {
     case USER_LOGIN_SUCCESS:
       return state
